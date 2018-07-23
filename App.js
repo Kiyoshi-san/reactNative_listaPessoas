@@ -13,11 +13,6 @@ export default class App extends React.Component {
           titulo="Usuários"
         />
         <Lista />
-        <Lista />
-        <Lista />
-        <Lista />
-        <Lista />
-        <Lista />
       </View>
     );
   }

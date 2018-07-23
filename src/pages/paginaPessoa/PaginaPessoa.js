@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 
 /*NÃO SERA MAIS USADO ESSE COMPONENTE, POIS ESTAMOS USANDO UM COMPONENTE PROPRIO PARA NAVEGAÇÃO*/
 // import Cabecalho from "../components/Cabecalho";
-import ListaPessoas from "../components/ListaPessoas";
+import ListaPessoas from "../../components/ListaPessoas";
 
 import axios from "axios"; // agora ja tenho acesso ao objeto axios
 

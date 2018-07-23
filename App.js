@@ -1,6 +1,6 @@
 import { StackNavigator } from "react-navigation";
 
-import PaginaPessoa from "./src/pages/PaginaPessoa";
+import PaginaPessoa from "./src/pages/paginaPessoa/PaginaPessoa";
 
 
 export default StackNavigator({

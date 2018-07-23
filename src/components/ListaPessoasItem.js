@@ -12,7 +12,7 @@ const ListaPessoasItem = props => {
 	return (
 		<TouchableOpacity onPress={() => 
 			console.log("Clicou", first)
-		}
+		}>
 			<View style={estilo.linha}>
 				<Image style={estilo.avatar} source={{ uri: pessoas.picture.thumbnail }} />
 				<Text style={estilo.linhaText}>{ `${maiusculaPrimLetra(title)} ${maiusculaPrimLetra(first)} ${maiusculaPrimLetra(last)}` }</Text>

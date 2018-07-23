@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import Cabecalho from "./src/components/Cabecalho";
+import Lista from "./src/components/Lista";
+
 
 export default class App extends React.Component {
   render() {
@@ -10,6 +12,12 @@ export default class App extends React.Component {
         <Cabecalho
           titulo="Usuários"
         />
+        <Lista />
+        <Lista />
+        <Lista />
+        <Lista />
+        <Lista />
+        <Lista />
       </View>
     );
   }
@@ -20,6 +28,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
 });

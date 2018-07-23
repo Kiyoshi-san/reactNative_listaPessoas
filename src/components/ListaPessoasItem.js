@@ -1,5 +1,5 @@
 import React from "react";
-import {StyleSheet, View, Text, Image} from "react-native";
+import {StyleSheet, View, Text, Image, TouchableOpacity} from "react-native";
 
 // import maiusculaPrimLetra from "../util/maiusculaPrimLetra";
 /*PARA IMPORTAR COMO DESTRUCT IGUAL ACIMA "import {StyleSheet} from ... ; É NECESSARIO COLOCAR A PASTA PARA O NODE IMPORTAR NO CASO: "util" QUE É ONDE ESTÁ A FUNÇÃO
@@ -10,10 +10,14 @@ const ListaPessoasItem = props => {
 	const {pessoas} = props;
 	const {title, first, last} = pessoas.name;
 	return (
-		<View style={estilo.linha}>
-			<Image style={estilo.avatar} source={{ uri: pessoas.picture.thumbnail }} />
-			<Text style={estilo.linhaText}>{ `${maiusculaPrimLetra(title)} ${maiusculaPrimLetra(first)} ${maiusculaPrimLetra(last)}` }</Text>
-		</View>
+		<TouchableOpacity onPress={() => 
+			console.log("Clicou", first)
+		}
+			<View style={estilo.linha}>
+				<Image style={estilo.avatar} source={{ uri: pessoas.picture.thumbnail }} />
+				<Text style={estilo.linhaText}>{ `${maiusculaPrimLetra(title)} ${maiusculaPrimLetra(first)} ${maiusculaPrimLetra(last)}` }</Text>
+			</View>
+		</TouchableOpacity>
 	);
 }
 

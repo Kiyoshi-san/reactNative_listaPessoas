@@ -7,14 +7,20 @@ import {StyleSheet, View, Text, Image, TouchableOpacity} from "react-native";
 import { maiusculaPrimLetra } from "../util";
 
 const ListaPessoasItem = props => {
-	const {pessoas, pressionou} = props;
+	const {pessoas, irParaDetalhes} = props;
 	const {title, first, last} = pessoas.name;
 	return (
 		<TouchableOpacity onPress={() => {
 
 				// console.log("Clicou", first)
 				// COMO É UM COMPONENTE FUNCIONAL NAO PRECISA DO "this."
-				pressionou();
+				/*irParaDetalhes();
+
+				Vamos passar o objeto "pessoas"
+				irParaDetalhes({ pessoas:pessoas }); - o ES6 permite que escreva pessoas 1x para não ficar repetindo - pessoas: pessoas
+				*/
+				irParaDetalhes({ pessoas });
+				
 			}}>
 			<View style={estilo.linha}>
 				<Image style={estilo.avatar} source={{ uri: pessoas.picture.thumbnail }} />

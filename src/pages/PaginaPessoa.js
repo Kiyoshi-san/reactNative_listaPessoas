@@ -42,9 +42,21 @@ export default class PaginaPessoa extends React.Component {
           titulo="Usuários"
         />*/}
         <ListaPessoas 
-          pessoas={this.state.pessoas}
-          pressionou={() => {
-            this.props.navigation.navigate("ChaveDetalhePessoas")
+          pessoas={this.state.pessoas}          
+          //clicouItem={() => {
+          //  this.props.navigation.navigate("ChaveDetalhePessoas")
+          //}}
+
+          /*this.props.navigation.navigate("ChaveDetalhePessoas")
+          Esse navigate() recebe 2 parametros
+          - a chave da pagina (nome/id) que foi declarado no App.js
+          - um parametro que volta para o Navigation do App.js em que podemos setar o titulo da pagina por ex
+          
+          - Entao vamos passar o parametro "paginaParams" tb*/
+          clicouItem={paginaParams => {
+            this.props.navigation.navigate("ChaveDetalhePessoas", paginaParams) /* Esse "paginaParams" foi para a App.js - vamos acessar atraves do objeto "navigation" - navigationOptions: ({navigation})
+            - Assim que passamos dados de uma pagina para outra
+            */
           }}
         />
       </View>

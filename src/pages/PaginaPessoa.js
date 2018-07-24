@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 
 /*NÃO SERA MAIS USADO ESSE COMPONENTE, POIS ESTAMOS USANDO UM COMPONENTE PROPRIO PARA NAVEGAÇÃO*/
 // import Cabecalho from "../components/Cabecalho";
-import ListaPessoas from "../../components/ListaPessoas";
+import ListaPessoas from "../components/ListaPessoas";
 
 import axios from "axios"; // agora ja tenho acesso ao objeto axios
 
@@ -33,6 +33,9 @@ export default class PaginaPessoa extends React.Component {
   }
 
   render() {
+    // ENVIADA ESSA FUNÇÃO PARA: F:\kiu\Projetos\ReactNative\listaDePessoas\src\components\ListaPessoasItem.js
+    // this.props.navigation.navigate(/* Chave da página */, /* state */)
+    // this.props.navigation.navigate("ChaveDetalhePessoas");
     return (
       <View>
         {/*<Cabecalho
@@ -40,6 +43,9 @@ export default class PaginaPessoa extends React.Component {
         />*/}
         <ListaPessoas 
           pessoas={this.state.pessoas}
+          pressionou={() => {
+            this.props.navigation.navigate("ChaveDetalhePessoas")
+          }}
         />
       </View>
     );

@@ -1,11 +1,15 @@
 import { StackNavigator } from "react-navigation";
 
-import PaginaPessoa from "./src/pages/paginaPessoa/PaginaPessoa";
+import PaginaPessoa from "./src/pages/PaginaPessoa";
+import PaginaPessoaDetalhes from "./src/pages/PaginaPessoaDetalhes";
 
 
 export default StackNavigator({
   "PaginaPrincipal": {
     screen: PaginaPessoa
+  },
+  "ChaveDetalhePessoas": {
+    screen: PaginaPessoaDetalhes
   }
 },{
   /*Configuração do Header*/

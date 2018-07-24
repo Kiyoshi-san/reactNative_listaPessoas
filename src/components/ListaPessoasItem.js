@@ -7,12 +7,15 @@ import {StyleSheet, View, Text, Image, TouchableOpacity} from "react-native";
 import { maiusculaPrimLetra } from "../util";
 
 const ListaPessoasItem = props => {
-	const {pessoas} = props;
+	const {pessoas, pressionou} = props;
 	const {title, first, last} = pessoas.name;
 	return (
-		<TouchableOpacity onPress={() => 
-			console.log("Clicou", first)
-		}>
+		<TouchableOpacity onPress={() => {
+
+				// console.log("Clicou", first)
+				// COMO É UM COMPONENTE FUNCIONAL NAO PRECISA DO "this."
+				pressionou();
+			}}>
 			<View style={estilo.linha}>
 				<Image style={estilo.avatar} source={{ uri: pessoas.picture.thumbnail }} />
 				<Text style={estilo.linhaText}>{ `${maiusculaPrimLetra(title)} ${maiusculaPrimLetra(first)} ${maiusculaPrimLetra(last)}` }</Text>

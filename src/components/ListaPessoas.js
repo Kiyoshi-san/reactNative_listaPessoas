@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 import ListaPessoasItem from "./ListaPessoasItem";
 
 const ListaPessoas = props => {
-	const { pessoas, pressionou } = props;
+	const { pessoas, clicouItem } = props;
 	/*const nomeElementos = pessoas.map(pessoas => {
 		const { first } = pessoas.name;
 		return (
@@ -18,7 +18,7 @@ const ListaPessoas = props => {
 		return <ListaPessoasItem 
 			key={pessoas.name.first} 
 			pessoas={pessoas} 
-			pressionou={pressionou}
+			irParaDetalhes={clicouItem}
 		/>
 	})
 

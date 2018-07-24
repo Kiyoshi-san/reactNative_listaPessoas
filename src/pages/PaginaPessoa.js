@@ -21,7 +21,7 @@ export default class PaginaPessoa extends React.Component {
   componentDidMount() {
     axios
       /*get - FAZENDO A CHAMADA ASSINCRONA*/
-      .get("https://randomuser.me/api/?nat=br&results=15")
+      .get("https://randomuser.me/api/?nat=br&results=1500") // Trazendo 1500 registros
       /*then - CALL BACK
       response é passado pelo axios*/
       .then(response => {

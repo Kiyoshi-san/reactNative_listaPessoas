@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, ScrollView, View, Text, Image } from "react-native";
 
 import Linha from "../components/Detalhes_LinhaTabelaDados";
 
@@ -8,7 +8,7 @@ class PaginaPessoaDetalhes extends React.Component {
 		/*pessoas vindo de "ListaPessoasItem.js" - irParaDetalhes({ pessoas });*/
 		const { pessoas } = this.props.navigation.state.params;
 		return(
-			<View style={estilo.container}>
+			<ScrollView style={estilo.container}>
 
 				<Image source={{ uri: pessoas.picture.large }}
 					style={ estilo.avatar } />
@@ -20,7 +20,7 @@ class PaginaPessoaDetalhes extends React.Component {
 					<Linha label="Cel:" conteudo={pessoas.location.cel}/>
 					<Linha label="Nacionalidade:" conteudo={pessoas.nat}/>
 				</View>
-			</View>
+			</ScrollView>
 		);
 	}
 }

@@ -30,7 +30,8 @@ export default StackNavigator({
         title: maiusculaPrimLetra(nomePessoa),
         headerTitleStyle: {
           color: "#fff",
-          fontSize: 30
+          fontSize: 30,
+          alignSelf: "center"
         }
       });
     }

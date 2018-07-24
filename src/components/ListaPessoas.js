@@ -4,7 +4,7 @@ import { StyleSheet, View, Text } from "react-native";
 import ListaPessoasItem from "./ListaPessoasItem";
 
 const ListaPessoas = props => {
-	const { pessoas } = props;
+	const { pessoas, pressionou } = props;
 	/*const nomeElementos = pessoas.map(pessoas => {
 		const { first } = pessoas.name;
 		return (
@@ -18,6 +18,7 @@ const ListaPessoas = props => {
 		return <ListaPessoasItem 
 			key={pessoas.name.first} 
 			pessoas={pessoas} 
+			pressionou={pressionou}
 		/>
 	})
 
@@ -32,7 +33,7 @@ const ListaPessoas = props => {
 
 const estilo = StyleSheet.create({
 	container:{
-		backgroundColor: "#6879f6"
+		backgroundColor: "#e7f6fd"
 	}
 });
 

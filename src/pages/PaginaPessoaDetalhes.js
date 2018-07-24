@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 
+import Linha from "../components/Detalhes_LinhaTabelaDados";
+
 class PaginaPessoaDetalhes extends React.Component {
 	render(){
 		/*pessoas vindo de "ListaPessoasItem.js" - irParaDetalhes({ pessoas });*/
@@ -11,10 +13,12 @@ class PaginaPessoaDetalhes extends React.Component {
 				<Image source={{ uri: pessoas.picture.large }}
 					style={ estilo.avatar } />
 				<View style={estilo.detalheContainer}>
-					<View style={estilo.linha}>
-						<Text style={estilo.celulaLabel}>E-mail: </Text>
-						<Text style={estilo.celulaConteudo}>{ pessoas.email }</Text>
-					</View>
+					<Linha label="Email:" conteudo={pessoas.email}/>
+					<Linha label="Cidade:" conteudo={pessoas.location.city}/>
+					<Linha label="Estado:" conteudo={pessoas.location.state}/>
+					<Linha label="Tel:" conteudo={pessoas.location.phone}/>
+					<Linha label="Cel:" conteudo={pessoas.location.cel}/>
+					<Linha label="Nacionalidade:" conteudo={pessoas.nat}/>
 				</View>
 			</View>
 		);
@@ -36,22 +40,6 @@ const estilo = StyleSheet.create({
 		backgroundColor: "#e2f9ff",
 		marginTop: 20,
 		elevation: 1
-	},
-	linha: {
-		flexDirection: "row", // como default é "column"
-		paddingTop: 3,
-		paddingBottom: 3,
-		borderWidth: 1,
-		borderColor: "#e2f9ff"
-	},
-	celulaLabel: {
-		fontSize: 18,
-		paddingLeft: 5,
-		fontWeight: "bold"
-	},
-	celulaConteudo: {
-		fontSize: 18,
-		paddingLeft: 5
 	}
 });
 

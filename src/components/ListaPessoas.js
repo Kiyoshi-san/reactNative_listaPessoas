@@ -41,8 +41,10 @@ const ListaPessoas = props => {
 					irParaDetalhes={clicouItem}
 				/>
 			)}
+			/*QDO O NOSSO OBJETO, NO CASO "pessoas" NÃO TEM O PARAMETRO "key" SENDO ENVIADO DEVEMOS PASSAR O keyExtractor*/ 
+			keyExtractor={ item => item.name.first }
 		/>
-	)
+	);
 };
 
 /**/

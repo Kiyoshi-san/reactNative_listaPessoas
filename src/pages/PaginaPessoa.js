@@ -5,7 +5,11 @@ import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
 // import Cabecalho from "../components/Cabecalho";
 import ListaPessoas from "../components/ListaPessoas";
 
-import axios from "axios"; // agora ja tenho acesso ao objeto axios
+import axios from "axios"; /* agora ja tenho acesso ao objeto axios
+AXIOS - É COMO A CHAMADA "AJAX" - CHAMADA DE PROMISE
+O CALLBACK ("success:") - É O ".then"
+"error:" - ".rejected"
+*/
 
 export default class PaginaPessoa extends React.Component {
   constructor(props) {
@@ -14,11 +18,12 @@ export default class PaginaPessoa extends React.Component {
     this.state = {
       pessoas: [],
       loading: false,
+      deuErro: false // ESTAMOS SETANDO UM VALOR "false" PADRÃO, ABAIXO MUDAMOS CASO NECESS
     }
   }
 
 
-  /*VAMOS COLOCAR O OBJETO AXIOS NA FUNÇÇÃO componentDidMount() DO REACT - É UM EVENTO DO TIPO onReady*/
+  /*VAMOS COLOCAR O OBJETO AXIOS NA FUNÇÇÃO componentDidMount() DO REACT - É UM EVENTO DO TIPO "onReady"*/
   componentDidMount() {
     this.setState({ loading: true });
 
@@ -35,7 +40,12 @@ export default class PaginaPessoa extends React.Component {
             pessoas: results,
             loading: false
           })
-        })
+        }).catch(error => { // FZD UM HANDLER PRA CAPTURAR O ERRO
+          this.setState({ 
+            deuErro: true,
+            loading: false
+          })
+        });
     }, 1500);
   }
 
@@ -67,7 +77,8 @@ export default class PaginaPessoa extends React.Component {
 
             // : null
 
-            : <ListaPessoas 
+            : this.state.deuErro ? <Text>Ops... Algo deu errado</Text> 
+              : <ListaPessoas 
                 pessoas={this.state.pessoas}          
                 //clicouItem={() => {
                 //  this.props.navigation.navigate("ChaveDetalhePessoas")
@@ -93,8 +104,13 @@ export default class PaginaPessoa extends React.Component {
 }
 
 const estilo = StyleSheet.create ({
-  container:{
+  container: {
     flex:1, // OCUPA TODA A TELA
-    justifyContent:"center" // CENTRALIZA - TECNICA DO FLEXBOX
+    justifyContent:"center" // CENTRALIZA EIXO Y - TECNICA DO FLEXBOX
+  },
+  erro: {
+    color: "red",
+    alignSelf: "center", // CENTRALIZA EIXO X - TECNICA DO FLEXBOX
+    fontSize: 18
   }
 })

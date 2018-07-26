@@ -28,7 +28,7 @@ export default class PaginaPessoa extends React.Component {
     this.setState({ loading: true });
 
     // Agendando uma função (a chamada get) para ser executada dps de 1500 ms (1,5 s)
-    setTimeout(() => {
+    // setTimeout(() => {
       axios
         /*get - FAZENDO A CHAMADA ASSINCRONA*/
         .get("https://randomuser.me/api/?nat=br&results=150") // Trazendo 150 registros
@@ -46,7 +46,7 @@ export default class PaginaPessoa extends React.Component {
             loading: false
           })
         });
-    }, 1500);
+    // }, 1500);
   }
 
   carregandoLoading() {

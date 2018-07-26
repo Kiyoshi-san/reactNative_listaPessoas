@@ -15,7 +15,7 @@ const Linha = ({ label, conteudo }) => {
 */
 // const Linha = ({ label, conteudo }) => {
 // label = "" - caso alguem não passe valor pro label por default ele valerá "" - prevenção de erro
-const Linha = ({ label = "", conteudo = "" }) => {
+const Linha = ({ label = "", conteudo = "-" }) => {
 	return (
 	<View style={estilo.linha}>
 		<Text style={[

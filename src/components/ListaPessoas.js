@@ -33,7 +33,7 @@ const ListaPessoas = props => {
 			- RENDERITEM - É CHAMADO QUANDO ESTA SENDO FEITO O SCROLL PARA QUE RENDERIZE MAIS ITEMS - CHAMANDO A FUNÇÃO QUE ESTÁ SENDO INSTANCIADA PELA "renderItem"
 		*/
 		<FlatList
-			style={estilo.container} 
+			style={estilo.container}
 			data={pessoas}
 			renderItem={({ item }) => (
 				<ListaPessoasItem 
